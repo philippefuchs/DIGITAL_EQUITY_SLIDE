@@ -2,8 +2,14 @@
 import { GoogleGenAI, Type } from "@google/genai";
 
 const getAI = () => {
-  // Fallback to hardcoded key if env var not available (for Vercel deployment)
-  const apiKey = import.meta.env.VITE_GEMINI_API_KEY || "AIzaSyAh291crlxNSqCBWZAZPlZNAFpmsQ44A1w";
+  const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+
+  if (!apiKey) {
+    throw new Error(
+      "VITE_GEMINI_API_KEY is not defined. Please configure it in your environment variables."
+    );
+  }
+
   return new GoogleGenAI({ apiKey });
 };
 
