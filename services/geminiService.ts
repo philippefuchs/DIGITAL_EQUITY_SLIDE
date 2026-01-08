@@ -3,9 +3,6 @@ import { GoogleGenAI, Type } from "@google/genai";
 
 const getAI = () => {
   const apiKey = import.meta.env.VITE_GEMINI_API_KEY as string;
-  if (!apiKey) {
-    throw new Error('VITE_GEMINI_API_KEY is not defined. Please add it to your environment variables.');
-  }
   return new GoogleGenAI({ apiKey });
 };
 
