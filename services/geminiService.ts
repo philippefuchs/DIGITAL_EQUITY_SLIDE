@@ -18,7 +18,7 @@ export async function generateThematicImage(prompt: string): Promise<string | nu
       contents: {
         parts: [
           {
-            text: `Professional high - tech corporate photography for a "Digital Equity Value Creation" presentation.Subject: ${prompt}.Style: minimalist, bright lighting, electric blue accents, technological growth, high - resolution, sharp focus, modern digital business environment, 16: 9 aspect ratio.`,
+            text: `Professional high-tech corporate photography for a "Digital Equity Value Creation" presentation. Subject: ${prompt}. Style: minimalist, bright lighting, electric blue accents, technological growth, high-resolution, sharp focus, modern digital business environment, 16:9 aspect ratio.`,
           },
         ],
       },
@@ -31,7 +31,7 @@ export async function generateThematicImage(prompt: string): Promise<string | nu
 
     for (const part of response.candidates?.[0]?.content?.parts || []) {
       if (part.inlineData) {
-        return `data: image / png; base64, ${part.inlineData.data} `;
+        return `data:image/png;base64,${part.inlineData.data}`;
       }
     }
     return null;
@@ -58,7 +58,7 @@ export async function editImage(base64Data: string, mimeType: string, prompt: st
             },
           },
           {
-            text: `As a professional designer for Digital Equity Value Creation, modify this image based on: ${prompt}. Use electric blue branding, digital themes, and a modern corporate look.Return the edited image.`,
+            text: `As a professional designer for Digital Equity Value Creation, modify this image based on: ${prompt}. Use electric blue branding, digital themes, and a modern corporate look. Return the edited image.`,
           },
         ],
       },
@@ -66,7 +66,7 @@ export async function editImage(base64Data: string, mimeType: string, prompt: st
 
     for (const part of response.candidates?.[0]?.content?.parts || []) {
       if (part.inlineData) {
-        return `data:${mimeType}; base64, ${part.inlineData.data} `;
+        return `data:${mimeType};base64,${part.inlineData.data}`;
       }
     }
     return null;
