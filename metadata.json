@@ -1,0 +1,7 @@
+{
+  "name": "McKinsey Style Strategy Visualizer",
+  "description": "Professional consulting-style presentation builder that transforms images into strategic slides. Features AI-powered image editing with Gemini 2.5 Flash Image and PDF export.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
