@@ -6,24 +6,35 @@ interface Props {
   template: TemplateType;
   images: UploadedImage[];
   data: SlideData;
+  customLogo?: string | null;
 }
 
-const TemplateRenderer: React.FC<Props> = ({ template, images, data }) => {
+const TemplateRenderer: React.FC<Props> = ({ template, images, data, customLogo }) => {
   const mainImageSrc = data.aiImageUrl || (images[0] ? images[0].url : null);
 
-  const renderDigitalEquityLogo = () => (
-    <div className="flex flex-col items-end flex-shrink-0">
-      <div className="de-logo-bars mb-1">
-        <div className="de-bar de-bar-1"></div>
-        <div className="de-bar de-bar-2"></div>
-        <div className="de-bar de-bar-3"></div>
-        <div className="de-bar de-bar-4"></div>
-        <div className="de-bar de-bar-5"></div>
+  const renderDigitalEquityLogo = () => {
+    if (customLogo) {
+      return (
+        <div className="flex flex-col items-end flex-shrink-0">
+          <img src={customLogo} alt="Custom logo" className="max-h-16 object-contain" />
+        </div>
+      );
+    }
+
+    return (
+      <div className="flex flex-col items-end flex-shrink-0">
+        <div className="de-logo-bars mb-1">
+          <div className="de-bar de-bar-1"></div>
+          <div className="de-bar de-bar-2"></div>
+          <div className="de-bar de-bar-3"></div>
+          <div className="de-bar de-bar-4"></div>
+          <div className="de-bar de-bar-5"></div>
+        </div>
+        <div className="digital-equity-logo-text text-lg leading-none">DIGITAL EQUITY</div>
+        <div className="text-[8px] font-bold text-[#0077C8] tracking-[0.2em] mt-0.5">VALUE CREATION</div>
       </div>
-      <div className="digital-equity-logo-text text-lg leading-none">DIGITAL EQUITY</div>
-      <div className="text-[8px] font-bold text-[#0077C8] tracking-[0.2em] mt-0.5">VALUE CREATION</div>
-    </div>
-  );
+    );
+  };
 
   const renderChevrons = () => (
     <div className="chevron-container scale-75 origin-right">

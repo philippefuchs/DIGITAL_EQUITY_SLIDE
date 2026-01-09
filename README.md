@@ -49,6 +49,7 @@ See [VERCEL_DEPLOYMENT.md](./VERCEL_DEPLOYMENT.md) for detailed deployment instr
 - ✨ AI-powered slide generation using Gemini
 - 🎨 McKinsey-style professional templates
 - 🖼️ Automatic image generation for each slide
+- 🏷️ **Custom logo upload** - Replace the default logo with your own branding
 - 📄 PDF export functionality
 - 🎯 Digital Equity branding
 
@@ -62,10 +63,23 @@ See [VERCEL_DEPLOYMENT.md](./VERCEL_DEPLOYMENT.md) for detailed deployment instr
 
 ## 📖 Usage
 
+### Generating Strategy Decks
+
 1. Enter your transformation goal in the prompt area
 2. Click the lightning bolt button ⚡
 3. Wait 30-60 seconds for AI to generate 5 slides
 4. Export to PDF using the export button
+
+### Custom Logo Upload
+
+1. In the left sidebar, find the **"Custom Logo"** section
+2. Click on the upload area (dashed border)
+3. Select your logo file (PNG, JPG, SVG, etc.)
+4. Your logo will instantly appear on all slides
+5. To change: click on the current logo
+6. To reset: click "Reset to default logo"
+
+**Your logos are saved in**: `assets/digital-equity-logo-small.png` and `assets/digital-equity-logo-large.png`
 
 ## 🔒 Security
 
