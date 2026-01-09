@@ -16,7 +16,12 @@ const TemplateRenderer: React.FC<Props> = ({ template, images, data, customLogo 
     if (customLogo) {
       return (
         <div className="flex flex-col items-end flex-shrink-0">
-          <img src={customLogo} alt="Custom logo" className="max-h-16 object-contain" />
+          <img
+            src={customLogo}
+            alt="Custom logo"
+            className="max-h-16 object-contain filter-none opacity-100 brightness-100 contrast-100 saturate-100"
+            style={{ filter: 'none', opacity: 1 }}
+          />
         </div>
       );
     }
